@@ -1,0 +1,22 @@
+<div class="container mt-3">
+  <h4>Editing</h4>
+  
+  <%= render "form", tweet: @tweet %>
+
+  <div id="edit-options" class="d-flex flex-row gap-4 justify-content-center align-items-center">
+    <!--Back to tweets -->
+    <%= link_to tweets_path, class: "d-flex align-items-center gap-2" do %>
+      <i class="fa-solid fa-arrow-left"></i>
+      <p class="mb-0 d-none d-md-block">Back</p>
+    <% end %>
+
+    <span>|</span>
+
+    <!--go to the specefic tweet -->
+    <%= link_to @tweet, class: "d-flex align-items-center gap-2" do%>
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <p class="mb-0 d-none d-md-block">Options</p>
+    <% end %>
+
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<div class="px-3 g-0">
+  <h3>New tweet</h3>
+  <% if @tweet.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tweet.errors.count, "error") %> prohibited this tweet from being saved:</h2>
+      <ul>
+        <% @tweet.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= render "form", tweet: @tweet %>
+  <%= link_to tweets_path, class: "back-link ps-3" do %>
+    <i class="fa-solid fa-arrow-left"></i>
+    Back
+  <% end %>
+  <hr>
+
+</div>

@@ -1,0 +1,26 @@
+<section id="show-tweet" class="container mt-3">
+
+  <%= render @tweet %>
+
+  <div class="d-flex justify-content-center align-items-center gap-2">
+
+    <%= link_to tweets_path, class: "d-flex align-items-center gap-2" do %>
+      <i class="fa-solid fa-arrow-left"></i>
+      <p class="mb-0 d-none d-md-block">Back</p>
+    <% end %>
+
+    <span>|</span>
+
+    <%= link_to edit_tweet_path(@tweet), class: "d-flex flex-row align-items-center gap-1 text-decoration-none" do %>
+      <i class="fa-solid fa-pen"></i>
+      <p class="mb-0 d-none d-md-block">Edit</p>
+    <% end %>
+
+    <span>|</span>
+
+    <%= button_to @tweet,id: "delete-show", class: "d-flex flex-row align-items-center gap-1 text-decoration-none", method: :delete do %>
+      <i class="fa-solid fa-trash"></i>
+      <p class="mb-0 d-none d-md-block">Delete</p>
+    <% end %>
+  </div>
+</div>

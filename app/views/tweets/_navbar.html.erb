@@ -1,0 +1,24 @@
+<aside>
+  <!-- LOGO -->
+  <div class="mt-4 logo-container d-flex">
+    <%= link_to root_path, class: "px-2 py-2 rounded-5 logo" do %>
+      <i class="fa-brands fa-x-twitter fs-1 text-white"></i>
+    <% end %>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar d-flex gap-4 flex-column">
+
+    <!-- Home -->
+    <%= link_to root_path, class: "px-md-2 px-3 py-1 rounded-4" do%>
+      <i class="fa-solid fa-house nav-icon"></i>
+      <p class="d-none d-md-inline ms-1 ms-lg-3 fs-6">Home</p>
+    <% end %>
+
+    <!-- New tweet -->
+    <%= link_to new_tweet_path, class: "px-md-2 px-3 py-1 rounded-4" do%>
+      <i class="fa-solid fa-hashtag nav-icon ms-0 ms-sm-1"></i>
+      <p class="d-none d-md-inline ms-1 ms-lg-3 fs-6">New Post</p>
+    <% end %>
+  </nav>
+</aside>

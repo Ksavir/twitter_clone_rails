@@ -1,0 +1,52 @@
+<!--Header -->
+<header class="bg-black">
+  <div class="container">
+    <%= render 'header' %>
+  </div>
+  <hr>
+</header>
+
+<!-- Main -->
+<div type="main" class="container">
+
+  <!--mensage if the tweet was created or not -->
+  <p style="color: green"><%= notice %></p>
+
+  <!--create new tweet -->
+  <%= render "form", tweet: @tweet %>
+  <hr class="mb-0">
+
+  <!-- Show all tweets -->
+  <div id="tweets" class="container pt-3">
+
+    <!--Show tweets from DB -->
+    <% @tweets.each do |tweet| %>
+      
+      <div class="rounded-4 ">
+        <%= render tweet %>
+      </div>
+      <!--Tweet options -->
+      <div class="d-flex flex-row gap-3 justify-content-end me-3">
+        <!--Edit-->
+        <%= link_to tweet, class: "d-flex flex-row align-items-center gap-1 text-decoration-none" do %>
+          <i class="fa-solid fa-pen"></i>
+          <p class="mb-0 d-none d-md-block">Edit</p>
+        <% end %>
+
+        <!--Delete-->
+        <%= link_to tweet, class: "d-flex flex-row align-items-center gap-1 text-decoration-none" do %>
+          <i class="fa-solid fa-trash"></i>
+          <p class="mb-0 d-none d-md-block">Delete</p>
+        <% end %>
+      </div>
+
+      <hr>
+    <% end %>
+  </div>
+
+  <!--Pagination-->
+  <div id="pagy-main" class="container">
+    <%== pagy_nav(@pagy) %>
+  </div>
+
+</div>

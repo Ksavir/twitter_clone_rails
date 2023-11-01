@@ -1,0 +1,25 @@
+<div id="<%= dom_id tweet %>" class="mx-2 mb-4">
+
+  <!--User Name Info -->
+  <div class="d-flex align-items-center gap-2 mb-3">
+    <!--In the future change this i for the user image -->
+    <i class="fa-solid fa-user"></i>
+
+    <!--Show the username -->
+    <p class="mb-0 text-capitalize">
+      <%= tweet.username %>
+    </p>
+
+    <!--Show the date when the tweet was created -->
+    <p class="mb-0" id="creation-time">
+      <%= tweet.created_at.strftime("%b %d") %>
+    </p>
+  </div>
+  <!--Show the tweet -->
+  <div class="tweet-content rounded-3">
+    <p class="mb-0 p-2">
+      <%= tweet.description %>
+    </p>
+  </div>
+
+</div>
